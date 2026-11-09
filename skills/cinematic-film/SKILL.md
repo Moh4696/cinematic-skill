@@ -7,7 +7,7 @@ description: Makes narrated cinematic films entirely from code, on any subject. 
 
 A film made this way is one camera move over one world. Every photo, card, clipping, map and number lives on one big board, and the camera travels between them along string, routes and arrows as the story moves. Every visual hit is timed to the word the narrator says. It is all code (Skia in Python), so it renders the same every time, any topic fits, and a new voice re-times the whole film by itself.
 
-Built from a 5:22 documentary about Al Capone, then opened up to any subject. The single-camera method follows Zane Hoyer's tutorial on code-built documentaries ([video](https://www.youtube.com/watch?v=e2Fykz51Nxg)); the rules here are written fresh from what broke while making it.
+Built from a 5:22 documentary about Al Capone, then opened up to any subject. The rules here were written from what broke while making it.
 
 ## Tools
 

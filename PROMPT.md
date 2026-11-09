@@ -3,7 +3,6 @@
 - **Built with:** Claude Opus 5.5 in Claude Code, by exploraX, on 2026-11-09.
 - **Inputs:**
   - The code-built Al Capone documentary made earlier in the same session (5:22, Skia engine, Higgsfield voice, ElevenLabs score).
-  - Zane Hoyer's tutorial on code-built documentaries.
   - The bugs met along the way.
 - **Process.**
   - The skill was first written as `cinematic-doc` for history documentaries.

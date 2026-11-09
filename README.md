@@ -130,7 +130,7 @@ On a 16 GB laptop the 92 second film renders at 1080p in about 6 minutes.
 
 ## Credits
 
-Built from a 5 minute documentary about Al Capone that exploraX made with an agent, then opened up to any subject. The single-camera evidence-wall method follows [Zane Hoyer's tutorial on code-built documentaries](https://www.youtube.com/watch?v=e2Fykz51Nxg). The rules and code here are our own, written from what broke along the way. The example film uses public-domain photographs from Wikimedia Commons; see its `photos.json`.
+Built from a 5 minute documentary about Al Capone that exploraX made with an agent, then opened up to any subject. The rules and code here were written from what broke along the way. The example film uses public-domain photographs from Wikimedia Commons; see its `photos.json`.
 
 ## Works well with
 
