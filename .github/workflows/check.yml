@@ -47,6 +47,8 @@ jobs:
         run: |
           S=skills/cinematic-film/scripts; P="$RUNNER_TEMP/film"
           python $S/new_project.py "$P"
+          python $S/get_fonts.py --project "$P"
+          test -s "$P/fonts/cond.ttf"
           python $S/make_beats.py --project "$P"
           python $S/prep_assets.py --project "$P"
           python $S/tts_say.py --project "$P"

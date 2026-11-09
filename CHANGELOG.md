@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (2026-11-09)
+
+- `get_fonts.py` fetches open-licensed fonts (Bebas Neue, Homemade Apple) for text roles that Linux and Windows cannot match, so labels, stamps and handwriting keep their look. `check_setup.py` points to it.
+
 ## 1.0.0 (2026-11-09)
 
 First release: `cinematic-film`, narrated cinematic films drawn entirely in code, on any subject.

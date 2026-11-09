@@ -57,6 +57,8 @@ if "skia" in mods:
     for role in FONT_ROLES:
         tf, desc = resolve_typeface(role)
         print(f"     {role:<7} {desc}")
+    if any(resolve_typeface(r)[1].startswith("system default") for r in FONT_ROLES):
+        print("     -> run get_fonts.py --project <folder> to fetch open-licensed replacements")
 
 voice = "say" if shutil.which("say") else "espeak-ng" if shutil.which("espeak-ng") else None
 line("ok" if voice else "--", f"scratch voice: {voice}" if voice else "no local voice for scratch tracks",

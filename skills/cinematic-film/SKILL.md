@@ -14,6 +14,7 @@ Built from a 5:22 documentary about Al Capone, then opened up to any subject. Th
 | File | What it does |
 | --- | --- |
 | `scripts/check_setup.py` | Checks Python, skia-python, ffmpeg, fonts and memory; says what to install |
+| `scripts/get_fonts.py` | Fetches open-licensed fonts (Bebas Neue, Homemade Apple) for any text role this machine lacks |
 | `scripts/new_project.py` | Starts a project from `assets/template/` (a runnable explainer), or the documentary example with `--example` |
 | `scripts/make_beats.py` | Writes `beats.md`, the table you approve; lints chronology, line length, digits in spoken text |
 | `scripts/tts_say.py` | Free scratch voice (macOS `say`, espeak-ng, or any TTS command) to time the film before the final voice |
@@ -28,7 +29,7 @@ Built from a 5:22 documentary about Al Capone, then opened up to any subject. Th
 | `scripts/mix_soundtrack.py` | Voice, effects and optional music, ducked and loudness-normalised |
 | `scripts/burn_captions.py` | Burns one of four caption styles into the finished film and writes an SRT |
 
-Needs Python 3.9+, `pip install skia-python numpy pillow` (scipy optional) and ffmpeg. Run `scripts/check_setup.py` first. All commands take `--project <folder>`.
+Needs Python 3.9+, `pip install skia-python numpy pillow` (scipy optional) and ffmpeg. Run `scripts/check_setup.py` first; on Linux or Windows, also run `scripts/get_fonts.py` per project. All commands take `--project <folder>`.
 
 ## Pick the film
 

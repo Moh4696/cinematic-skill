@@ -86,7 +86,7 @@ Change the finish with `film.look["grain"]`, `["glow"]`, `["vignette"]`, `["grad
 
 On light looks, use dark type and `BigText(grunge=False, shadow=False)` for a clean finish. Use `Print(pin=False)` for photos that should sit like prints on a table, not pinned evidence.
 
-Font roles are `cond` (labels, numbers, stamps), `label` and `labelm` (map labels, captions), `serif` (documents), `mono` (typewriter), `hand` (handwriting). Each falls back through common fonts. Put a file at `fonts/<role>.ttf` in the project to force one, for example Oswald Bold (OFL) as `cond` on Linux. `check_setup.py` prints what each role resolves to.
+Font roles are `cond` (labels, numbers, stamps), `label` and `labelm` (map labels, captions), `serif` (documents), `mono` (typewriter), `hand` (handwriting). Each falls back through common fonts. Put a file at `fonts/<role>.ttf` in the project to force one, for example Oswald Bold (OFL) as `cond` on Linux. `check_setup.py` prints what each role resolves to, and `get_fonts.py` fetches Bebas Neue (condensed) and Homemade Apple (handwriting) for any role that would fall back to the system default.
 
 Colour on dark looks: white or cream type. Dark ink goes only on paper, cards or a full yellow block (`bar_h=0.92`).
 
