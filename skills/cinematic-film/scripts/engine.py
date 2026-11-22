@@ -156,7 +156,7 @@ class Doc:
         """When `word` is spoken in line i, by its letter share of the line (pauses spread evenly).
         Search the SPOKEN text: "1929" is spoken "nineteen twenty-nine", so ask for "nineteen"."""
         vo = self.seg[i]["vo"]
-        letters = re.sub(r"[^a-z]", "", vo.lower())
+        letters = re.sub(r"[\W\d_]", "", vo.lower())
         idx, start = -1, 0
         for _ in range(nth + 1):
             idx = vo.lower().find(word.lower(), start); start = idx + 1
@@ -164,7 +164,7 @@ class Doc:
                 break
         if idx < 0:
             raise ValueError(f"{word!r} (occurrence {nth}) is not in the spoken text of line {i}: {vo!r}")
-        before = len(re.sub(r"[^a-z]", "", vo[:idx].lower()))
+        before = len(re.sub(r"[\W\d_]", "", vo[:idx].lower()))
         return self.L(i) + (self.E(i) - self.L(i)) * before / max(1, len(letters)) + 0.04
 
     def on(self, pr, fx, fy):
@@ -798,9 +798,10 @@ class Counter(Item):
     z = 70
 
     def __init__(self, x, y, size, value, t_in, dur=1.3, prefix="", suffix="", caption=None, rgb=WHITE, t_out=None,
-                 font="cond", start=0, sfx=True):
+                 font="cond", start=0, sep=",", sfx=True):
         super().__init__(t_in, t_out, None, sfx)
         self.x, self.y, self.size, self.value, self.dur = x, y, size, value, dur
+        self.sep = sep          # thousands separator: "," (en), " " (bg, fr, ru), "." (de)
         self.prefix, self.suffix, self.caption, self.rgb, self.font, self.start = prefix, suffix, caption, rgb, font, start
 
     def bounds(self, res):
@@ -816,7 +817,7 @@ class Counter(Item):
             return
         u = ease_out_cubic(ramp(t, self.t_in, self.dur))
         v = int(round(self.start + (self.value - self.start) * u))
-        txt = f"{self.prefix}{v:,}{self.suffix}"
+        txt = f"{self.prefix}{v:,}{self.suffix}".replace(",", self.sep)
         c.saveLayerAlpha(None, 255)
         tw = draw_text(c, res, txt, self.x, self.y, self.size, self.font, self.rgb, a, 0.03, "center")
         wp = skia.Paint(); wp.setBlendMode(skia.BlendMode.kDstOut)
